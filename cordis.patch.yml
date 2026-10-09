@@ -1,0 +1,12 @@
+# dsh-prompt-library bundle patch: inserts the dual-face plugin row into a
+# profile's layer stack.
+#
+# The row is a bare plugin addressed by package name: the node half (exports
+# ".") runs in the host process and owns the library file, the slash commands,
+# and the settings API route, while the `dsh.client` declaration in
+# package.json makes the browser half (exports "./client") load in the Web GUI
+# as a settings page.
+- insert:
+    - id: dsh-prompt-library
+      name: 'dsh-prompt-library'
+      config: {}
